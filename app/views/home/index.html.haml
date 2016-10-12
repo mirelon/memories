@@ -1,0 +1,7 @@
+%h2 Events
+%ul
+- @events.group_by(&:year).each do |year, events|
+  %li= year
+  %ul
+    - events.each do |event|
+      %li= event.name
