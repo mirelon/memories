@@ -1,5 +1,5 @@
 ActiveAdmin.register Event do
-  permit_params :name, :year, :date_from, :date_to, :text, resources_attributes: [:id, :url, :_destroy], event_people_attributes: [:id, :person_id, :_destroy]
+  permit_params :name, :year, :date_from, :date_to, :text, resources_attributes: [:id, :url, :name, :_destroy], event_people_attributes: [:id, :person_id, :_destroy]
 
   show do |event|
     attributes_table do
@@ -12,7 +12,7 @@ ActiveAdmin.register Event do
         event.people.map { |p| p.name }.join(", ").html_safe
       end
       row :resources do
-        event.resources.map { |r| link_to r.url, r.url, target: '_blank' }.join('').html_safe
+        event.resources.map { |r| link_to r.name, r.url, target: '_blank' }.join('').html_safe
       end
     end
   end
@@ -30,6 +30,7 @@ ActiveAdmin.register Event do
       end
       f.has_many :resources, allow_destroy: true do |deg|
         deg.input :url
+        deg.input :name
       end
     end
     f.actions
