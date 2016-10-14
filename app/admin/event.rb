@@ -34,7 +34,17 @@ ActiveAdmin.register Event do
       end
     end
     f.actions
-  end 
+  end
 
-
+  index do
+    selectable_column
+    column :name
+    column :year
+    column :date_from
+    column :date_to
+    column :text
+    column :people_count
+    column :resources_count
+    actions
+  end
 end

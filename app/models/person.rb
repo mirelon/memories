@@ -7,4 +7,8 @@ class Person < ApplicationRecord
     "#{firstname} #{lastname}"
   end
 
+  def event_count
+    events.count
+  end
+
 end

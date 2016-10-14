@@ -13,5 +13,15 @@ ActiveAdmin.register Person do
 #   permitted
 # end
 
+index do
+  selectable_column
+  column :id
+  column :nick
+  column :firstname
+  column :lastname
+  column :gmail
+  column :event_count
+  actions
+end
 
 end
