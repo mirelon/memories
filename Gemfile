@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'database_cleaner'
 gem 'seed_dump'
 gem 'haml'
 gem 'devise'
