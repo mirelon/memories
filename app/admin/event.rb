@@ -26,7 +26,7 @@ ActiveAdmin.register Event do
       f.input :date_to, as: :datepicker
       f.input :text
       f.has_many :event_people, allow_destroy: true do |deg|
-        deg.input :person, collection: Person.order(:firstname, :lastname).map{|p| [p.name, p.id]}
+        deg.input :person, as: :select2, collection: Person.order(:firstname, :lastname).map{|p| [p.name, p.id]}
       end
       f.has_many :resources, allow_destroy: true do |deg|
         deg.input :url

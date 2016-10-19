@@ -36,6 +36,8 @@ gem 'haml'
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'select2-rails'
+gem 'activeadmin-select2', github: 'mfairburn/activeadmin-select2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
